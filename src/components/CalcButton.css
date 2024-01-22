@@ -1,0 +1,17 @@
+.calc-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: #dbddd6;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+        background-color: #d6d6d6;
+    }
+}
