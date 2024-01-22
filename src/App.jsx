@@ -2,7 +2,7 @@ import "./App.css";
 import CalcButton from "./components/CalcButton";
 import { useState } from "react";
 
-const keys = ["7", "8", "9", "/", "4", "5", "6", "x", "1", "2", "3", "+", "0", ".", "-", "="];
+const keys = ["7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "+", "0", ".", "-", "="];
 
 export default function App() {
     const [sum, setSum] = useState([]);
