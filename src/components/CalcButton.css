@@ -14,4 +14,37 @@
     &:hover {
         background-color: #d6d6d6;
     }
+
+    &:active {
+        background-color: #c6c6c6;
+        box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.bg-operator {
+    background-color: #757575;
+    color: white;
+
+    &:hover {
+        background-color: #646464 !important;
+    }
+
+    &:active {
+        background-color: #646464 !important;
+        box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.bg-clear {
+    background-color: #cd8644;
+    color: white;
+
+    &:hover {
+        background-color: #c07c3c !important;
+    }
+
+    &:active {
+        background-color: #c07c3c !important;
+        box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+    }
 }
