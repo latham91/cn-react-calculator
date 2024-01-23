@@ -95,9 +95,11 @@ export default function App() {
                         <div className="calc-solar"></div>
                     </div>
                     <div
-                        className={`calc-screen ${sum.length > 8 ? "text-sm" : ""} ${sum.length > 9 ? "text-xs" : ""} ${
-                            sum.length > 10 ? "text-xxs" : ""
-                        }`}
+                        className={`calc-screen 
+                            ${sum.length > 7 ? "text-sm" : ""} 
+                            ${sum.length > 8 ? "text-xs" : ""} 
+                            ${sum.length > 9 ? "text-xxs" : ""}
+                        `}
                     >
                         {sum[0] ? sum.join("") : 0}
                     </div>
