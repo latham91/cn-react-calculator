@@ -7,14 +7,14 @@ export default function CalcButton({ label, onClick }) {
         onClick(label);
     };
 
-    const operatorKeys = ["+", "-", "*", "/", "^", "=", "%"];
+    const operatorKeys = ["+", "-", "*", "/", "^", "%"];
     const clearKeys = ["C", "AC"];
 
     return (
         <div
             className={`calc-button ${operatorKeys.includes(label) && "bg-operator"} ${
                 clearKeys.includes(label) && "bg-clear"
-            }`}
+            } ${label === "=" && "bg-equals"}`}
             onClick={handleButtonClick}
         >
             {label}
