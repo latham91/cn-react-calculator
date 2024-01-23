@@ -2,14 +2,10 @@ import "./App.css";
 import CalcButton from "./components/CalcButton";
 import { useState } from "react";
 
-const keys = ["7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "+", "0", ".", "-", "="];
+const keys = ["%", "^", "C", "AC", "7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "+", "0", ".", "-", "="];
 
 export default function App() {
     const [sum, setSum] = useState([]);
-
-    const handleClear = () => {
-        setSum([]);
-    };
 
     const handleButtonClick = (value) => {
         if (value === "=") {
@@ -17,6 +13,30 @@ export default function App() {
             const calcString = sum.join("");
             const calcSum = eval(calcString);
             setSum([calcSum]);
+            return;
+        }
+
+        if (value === "C") {
+            // Clear the last value
+            const newSum = [...sum];
+            newSum.pop();
+            setSum(newSum);
+            return;
+        }
+
+        if (value === "AC") {
+            // Clear the entire sum
+            setSum([]);
+            return;
+        }
+
+        if (value === "^") {
+            // Square the last value
+            const newSum = [...sum];
+            const lastValue = newSum.pop();
+            const squaredValue = lastValue * lastValue;
+            newSum.push(squaredValue);
+            setSum(newSum);
             return;
         }
 
@@ -33,9 +53,6 @@ export default function App() {
                         <div className="calc-solar"></div>
                     </div>
                     <div className="calc-screen">{sum[0] ? sum.join("") : 0}</div>
-                    <div className="calc-clear">
-                        <CalcButton label="AC" onClick={handleClear} />
-                    </div>
                     <div className="calc-keys">
                         {keys.map((key) => (
                             <CalcButton key={key} label={key} onClick={handleButtonClick} />
