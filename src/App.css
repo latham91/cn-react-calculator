@@ -24,7 +24,7 @@ main {
     border: 2px solid black;
     padding: 40px 20px 20px 20px;
     border-radius: 10px;
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(231, 231, 231);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 
     h3 {
