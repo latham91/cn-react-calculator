@@ -60,104 +60,19 @@ export default function App() {
         const handleKeyDown = (event) => {
             const { key } = event;
 
-            if (key === "Enter" || key === "=") {
-                handleButtonClick("=");
-                return;
-            }
-
-            if (key === "Backspace") {
-                handleButtonClick("C");
-                return;
-            }
+            const operatorKeys = ["Enter", "=", "%", ".", "/", "*", "-", "+"];
 
             if (key === "Escape") {
                 handleButtonClick("AC");
-                return;
-            }
-
-            if (key === "Shift") {
-                handleButtonClick("^");
-                return;
-            }
-
-            if (key === "%") {
-                handleButtonClick("%");
-                return;
-            }
-
-            if (key === ".") {
-                handleButtonClick(".");
-                return;
-            }
-
-            if (key === "/") {
-                handleButtonClick("/");
-                return;
-            }
-
-            if (key === "*") {
-                handleButtonClick("*");
-                return;
-            }
-
-            if (key === "-") {
-                handleButtonClick("-");
-                return;
-            }
-
-            if (key === "+") {
-                handleButtonClick("+");
-                return;
-            }
-
-            if (key === "0") {
-                handleButtonClick("0");
-                return;
-            }
-
-            if (key === "1") {
-                handleButtonClick("1");
-                return;
-            }
-
-            if (key === "2") {
-                handleButtonClick("2");
-                return;
-            }
-
-            if (key === "3") {
-                handleButtonClick("3");
-                return;
-            }
-
-            if (key === "4") {
-                handleButtonClick("4");
-                return;
-            }
-
-            if (key === "5") {
-                handleButtonClick("5");
-                return;
-            }
-
-            if (key === "6") {
-                handleButtonClick("6");
-                return;
-            }
-
-            if (key === "7") {
-                handleButtonClick("7");
-                return;
-            }
-
-            if (key === "8") {
-                handleButtonClick("8");
-                return;
-            }
-
-            if (key === "9") {
-                handleButtonClick("9");
-                return;
+            } else if (key === "Backspace") {
+                handleButtonClick("C");
+            } else if (operatorKeys.includes(key)) {
+                // If they key is included in the operatorKeys array, pass it to handleButtonClick
+                // If it is Enter pass = to handleButtonClick otherwise pass the key
+                handleButtonClick(key === "Enter" ? "=" : key);
+            } else if (/\d/.test(key)) {
+                // Regex to check if the key is a number (digit)
+                handleButtonClick(key);
             }
         };
 
