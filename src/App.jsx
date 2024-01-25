@@ -9,7 +9,7 @@ export default function App() {
 
     const handleButtonClick = useCallback(
         (value) => {
-            if (value === "=") {
+            if (value === "=" && !sum.includes("Error")) {
                 // Calculate the sum
                 try {
                     const calcString = sum.join("");
